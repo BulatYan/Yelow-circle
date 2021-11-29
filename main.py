@@ -1,15 +1,17 @@
 import sys
 import random
+from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from UI import Ui_MainWindow
 
 
-class Example(QMainWindow, Ui_MainWindow):
+
+class Example(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
+        uic.loadUi('UI.ui', self)
         self.initUI()
+
 
     def initUI(self):
         self.setGeometry(300, 300, 400, 400)
